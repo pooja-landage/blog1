@@ -7,9 +7,20 @@ use App\Product;
 class FrontController extends Controller
 {
     public function getData()
-    {
-        $sport = Product::where('category_id',1)->first();
+    {   
+        $all = Product::all();
+        $sport = Product::where('category_id',1)->get();
+        $business = Product::where('category_id',2)->get();
+        $technology = Product::where('category_id',3)->get();
+        $entertainment = Product::where('category_id',4)->get();
+    
+        $feat = Product::all();
+
+
         // dd($sport);
-        return view('welcome',compact('sport'));
+        // dd($sport);
+        return view('welcome',compact('sport','all','business','technology','feat','entertainment'));
     }
+
+  
 }

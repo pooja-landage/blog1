@@ -33,3 +33,6 @@ Route::post('category/deleteall/table','CategoryController@deleteall')->name('ca
 Route::post('/category/destroy','CategoryController@destroy')->name('category.form.delete');
 Route::get('category/delete/form/{id}','CategoryController@deleteform')->name('category.form.delete');
 Route::get('/','FrontController@getData')->name('data');
+
+Route::get('info/{id}','ProductController@getinfo')->name('product.info');
+

@@ -118,5 +118,10 @@ class ProductController extends Controller
         public function export()
         {
             return Excel::download(new UsersExport,'user.csv');
+        }
+        public function getinfo($id)
+        {
+            $all = Product::find($id);
+            return view('info' ,compact('all'));
         }     
 }
